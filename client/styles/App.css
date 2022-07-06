@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+.App {
+  background-color: aliceblue;
+}
+.main--heading {
+  text-align: center;
+  font-size: x-large;
+}

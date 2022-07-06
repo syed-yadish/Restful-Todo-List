@@ -1,0 +1,10 @@
+.todo--card{
+display: flex;
+flex-direction: column;
+width: 70%;
+margin: 0 auto;
+}
+.todo--card ul{
+    list-style: none;
+
+}

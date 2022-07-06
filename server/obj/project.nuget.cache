@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "1so1uW6H7hJvk+/wQdNlCslKl61u5G/5nTAtY8bbbj+lLRHqRXdyfDNBOF7jOczBlaJYyYxdcjkZbJ+jRwC3ig==",
+  "success": true,
+  "projectFilePath": "/Users/saltdev/Desktop/HackDayApp/server/server.csproj",
+  "expectedPackageFiles": [
+    "/Users/saltdev/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/saltdev/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/saltdev/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/saltdev/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/saltdev/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/saltdev/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
