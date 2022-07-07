@@ -1,4 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<TodoLyContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TodoLyContext") ?? throw new InvalidOperationException("Connection string 'TodoLyContext' not found.")));
 
 // Add services to the container.
 
@@ -8,6 +12,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+  var services = scope.ServiceProvider;
+  SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
