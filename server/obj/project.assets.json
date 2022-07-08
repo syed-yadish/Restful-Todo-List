@@ -9619,6 +9619,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.EntityFrameworkCore >= 6.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.6",
@@ -9626,19 +9627,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/saltdev/.nuget/packages/": {}
+    "/Users/yadishbukhari/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/saltdev/Desktop/HackDayApp/server/server.csproj",
+      "projectUniqueName": "/Users/yadishbukhari/Desktop/HackDay-App/server/server.csproj",
       "projectName": "server",
-      "projectPath": "/Users/saltdev/Desktop/HackDayApp/server/server.csproj",
-      "packagesPath": "/Users/saltdev/.nuget/packages/",
-      "outputPath": "/Users/saltdev/Desktop/HackDayApp/server/obj/",
+      "projectPath": "/Users/yadishbukhari/Desktop/HackDay-App/server/server.csproj",
+      "packagesPath": "/Users/yadishbukhari/.nuget/packages/",
+      "outputPath": "/Users/yadishbukhari/Desktop/HackDay-App/server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/saltdev/.nuget/NuGet/NuGet.Config"
+        "/Users/yadishbukhari/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -9662,6 +9663,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.6, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",

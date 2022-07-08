@@ -13,9 +13,9 @@ namespace server.Controllers
     [ApiController]
     public class TodoLyController : ControllerBase
     {
-        private readonly TodoLyContext _context;
+        private readonly MvcTodoLyContext _context;
 
-        public TodoLyController(TodoLyContext context)
+        public TodoLyController(MvcTodoLyContext context)
         {
             _context = context;
         }
@@ -33,7 +33,7 @@ namespace server.Controllers
 
         // GET: api/TodoLy/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoLy>> GetTodoLy(int id)
+        public async Task<ActionResult<TodoLy>> GetTodoLy(string id)
         {
           if (_context.TodoLy == null)
           {
@@ -52,7 +52,7 @@ namespace server.Controllers
         // PUT: api/TodoLy/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoLy(int id, TodoLy todoLy)
+        public async Task<IActionResult> PutTodoLy(string id, TodoLy todoLy)
         {
             if (id != todoLy.Id)
             {
@@ -87,17 +87,31 @@ namespace server.Controllers
         {
           if (_context.TodoLy == null)
           {
-              return Problem("Entity set 'TodoLyContext.TodoLy'  is null.");
+              return Problem("Entity set 'MvcTodoLyContext.TodoLy'  is null.");
           }
             _context.TodoLy.Add(todoLy);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (TodoLyExists(todoLy.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtAction("GetTodoLy", new { id = todoLy.Id }, todoLy);
         }
 
         // DELETE: api/TodoLy/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTodoLy(int id)
+        public async Task<IActionResult> DeleteTodoLy(string id)
         {
             if (_context.TodoLy == null)
             {
@@ -115,7 +129,7 @@ namespace server.Controllers
             return NoContent();
         }
 
-        private bool TodoLyExists(int id)
+        private bool TodoLyExists(string id)
         {
             return (_context.TodoLy?.Any(e => e.Id == id)).GetValueOrDefault();
         }

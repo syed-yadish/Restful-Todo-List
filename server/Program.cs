@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<TodoLyContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TodoLyContext") ?? throw new InvalidOperationException("Connection string 'TodoLyContext' not found.")));
+builder.Services.AddDbContext<MvcTodoLyContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcTodoLyContext") ?? throw new InvalidOperationException("Connection string 'MvcTodoLyContext' not found.")));
 
 // Add services to the container.
 
@@ -13,12 +13,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-  var services = scope.ServiceProvider;
-  SeedData.Initialize(services);
-}
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -27,6 +21,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(builder =>
+            {
+                builder.AllowAnyMethod()
+                       .AllowAnyHeader().WithOrigins("http://localhost:3000");
+            });
 
 app.UseAuthorization();
 

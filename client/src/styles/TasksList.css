@@ -1,0 +1,13 @@
+.todo--list__card {
+  min-height: 80px;
+  width: 100%;
+  background-color: rgb(167, 223, 204);
+  border-radius: 20px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  padding-top: 20px;
+}
+
+.todo--list__card .task--name {
+  font-size: x-large;
+}
