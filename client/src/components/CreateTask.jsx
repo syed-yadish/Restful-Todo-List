@@ -5,10 +5,10 @@ const CreateTask = ({ createNewTask }) => {
   const [newTask, setNewTask] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    createNewTask(newTask);
-    setNewTask("");
-  };
+      e.preventDefault();
+      createNewTask(newTask);
+      setNewTask("");
+    };
 
   return (
     <div className="task--create--card">
@@ -22,6 +22,7 @@ const CreateTask = ({ createNewTask }) => {
         placeholder="Enter a new Task"
         value={newTask}
         onChange={(e) => setNewTask(e.target.value)}
+        required={true}
         />
         </div>
       <button className="form__btn" id="btnAddTodo">Add</button>

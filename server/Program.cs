@@ -2,7 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MvcTodoLyContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcTodoLyContext") ?? throw new InvalidOperationException("Connection string 'MvcTodoLyContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcTodoLyContext") ?? 
+    throw new InvalidOperationException("Connection string 'MvcTodoLyContext' not found.")));
 
 // Add services to the container.
 

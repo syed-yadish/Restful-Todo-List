@@ -50,37 +50,36 @@ namespace server.Controllers
         }
 
         // PUT: api/TodoLy/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoLy(string id, TodoLy todoLy)
-        {
-            if (id != todoLy.Id)
-            {
-                return BadRequest();
-            }
+        // [HttpPut("{id}")]
+        // public async Task<IActionResult> PutTodoLy(string id, TodoLy todoLy)
+        // {
+        //     if (id != todoLy.Id)
+        //     {
+        //         return BadRequest();
+        //     }
 
-            _context.Entry(todoLy).State = EntityState.Modified;
+        //     _context.Entry(todoLy).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TodoLyExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //     try
+        //     {
+        //         await _context.SaveChangesAsync();
+        //     }
+        //     catch (DbUpdateConcurrencyException)
+        //     {
+        //         if (!TodoLyExists(id))
+        //         {
+        //             return NotFound();
+        //         }
+        //         else
+        //         {
+        //             throw;
+        //         }
+        //     }
 
-            return NoContent();
-        }
+        //     return NoContent();
+        // }
 
-        // POST: api/TodoLy
+         // POST: api/TodoLy
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<TodoLy>> PostTodoLy(TodoLy todoLy)
